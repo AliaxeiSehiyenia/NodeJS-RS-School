@@ -10,9 +10,7 @@ const resultDirPath = path.join(__dirname, 'files_copy');
 
 const copy = async () => {
     try {
-        await fs.cp(sourceFilePath, resultDirPath, {recursive: true, errorOnExist: true, force: false}, (error, data) => {
-            console.log('file copy');
-        });
+        await fs.cp(sourceFilePath, resultDirPath, {recursive: true, errorOnExist: true, force: false});
     } catch (err) {
         throw Error('FS operation failed');
     }
