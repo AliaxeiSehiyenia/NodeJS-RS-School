@@ -1,5 +1,14 @@
 const parseArgs = () => {
-    // Write your code here 
+    const { argv } = process;
+    const resultArr = [];
+
+    argv.forEach((arg, index, arr) => {
+        if (arg.startsWith("--")) {
+            resultArr.push(`${arg.slice(2)} is ${arr[index + 1]}`);
+        }
+    });
+
+    console.log(resultArr.join(", "));
 };
 
 parseArgs();
